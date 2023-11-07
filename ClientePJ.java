@@ -34,5 +34,7 @@ public class ClientePJ extends Cliente {
         this.prazoMax = prazoMax;
     }
 
-    
+    public String paraString(){
+        return super.paraString() + "\n Cnpj: " + cnpj + "\n Razao Social: " + razao + "\n Prazo maximo: " + prazoMax; 
+    }    
 }

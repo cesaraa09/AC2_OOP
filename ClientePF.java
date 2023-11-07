@@ -24,6 +24,5 @@ public class ClientePF extends Cliente {
         this.qtdparcelas = qtdparcelas;
     }
 
-    
 
 }

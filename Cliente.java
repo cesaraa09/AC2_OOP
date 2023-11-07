@@ -33,10 +33,10 @@ public class Cliente {
         this.datacadastro = datacadastro;
     }
     
-    /* public String paraString(){
-        return 
+    public String paraString(){
+        return "Cliente: " + nome + "\n Endereco:" + endereco.paraString() + "\n Data de cadastro:" + datacadastro; 
     }
-    */
+    
     
 
 }
