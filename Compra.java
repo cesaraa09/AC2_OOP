@@ -3,12 +3,14 @@ public class Compra {
     private String id;
     private String dataCompra;
     private String idCliente; // Recebe Cpf ou Cnpj do cliente.
+    private double valorPago;
 
-    public Compra(double valorTotal, String id, String dataCompra, String idCliente) {
+    public Compra(double valorTotal, String id, String dataCompra, String idCliente, double valorPago) {
         this.valorTotal = valorTotal;
         this.id = id;
         this.dataCompra = dataCompra;
         this.idCliente = idCliente;
+        this.valorPago = valorPago
     }
 
     public double getValorTotal() {
@@ -43,8 +45,18 @@ public class Compra {
         this.idCliente = idCliente;
     }
 
+    public double getvalorPago() {
+        return valorPago;
+    }
+
+    public void setvalorPago(double valorPago) {
+        this.valorPago = valorPago;
+    }
+
     
-    
+    public double valorRestante(){
+        return valorTotal-valorPago;
+    }
 
 
     
