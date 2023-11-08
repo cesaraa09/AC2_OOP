@@ -64,7 +64,7 @@ public class Endereco {
     }
 
     public String paraString() {
-        return "Endereço: " + rua + ", nº " + numero + ", " + bairro + "\nCEP: " + cep + "\n" + cidade + " - " + estado;
+        return "Endereco: " + rua + ", Nm: " + numero + ", " + bairro + "\nCEP: " + cep + "\n" + cidade + "/" + estado;
     }
     
 }

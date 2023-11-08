@@ -34,7 +34,7 @@ public class Cliente {
     }
     
     public String paraString(){
-        return "Cliente: " + nome + "\n Endereco:" + endereco.paraString() + "\n Data de cadastro:" + datacadastro; 
+        return "Cliente: " + nome + "\nEndereco:" + endereco.paraString() + "\nData de cadastro:" + datacadastro; 
     }
     
     

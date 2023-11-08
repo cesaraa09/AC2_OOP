@@ -35,6 +35,6 @@ public class ClientePJ extends Cliente {
     }
 
     public String paraString(){
-        return super.paraString() + "\n Cnpj: " + cnpj + "\n Razao Social: " + razao + "\n Prazo maximo: " + prazoMax; 
+        return super.paraString() + "\nCnpj: " + cnpj + "\nRazao Social: " + razao + "\nPrazo maximo: " + prazoMax; 
     }    
 }

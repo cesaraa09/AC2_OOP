@@ -24,5 +24,8 @@ public class ClientePF extends Cliente {
         this.qtdparcelas = qtdparcelas;
     }
 
+    public String paraString() {
+        return super.paraString() + "\nCpf: " + cpf + "\nQuantidade máxima de parcelas: "  + qtdparcelas;
+    }
 
 }
