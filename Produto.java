@@ -46,7 +46,15 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    
+    public boolean verificarVal(){ // Verificação caso não haja data de validade é executada na main!
+        Date hoje = new Date(); // Objeto Date que possui a data atual,     
+        if(dataVal.after(hoje) ){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
     
 }

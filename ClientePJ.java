@@ -1,9 +1,11 @@
+import java.util.Date;
+
 public class ClientePJ extends Cliente {
     private String cnpj;
     private String razao;
     private int prazoMax;
 
-    public ClientePJ(String nome, Endereco endereco, String datacadastro, String cnpj, String razao, int prazoMax) {
+    public ClientePJ(String nome, Endereco endereco, Date datacadastro, String cnpj, String razao, int prazoMax) {
         super(nome, endereco, datacadastro);
         this.cnpj = cnpj;
         this.razao = razao;

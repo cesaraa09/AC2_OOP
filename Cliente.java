@@ -1,12 +1,14 @@
+import java.util.Date;
+
 public class Cliente {
     private String nome;
     private Endereco endereco;
-    private String datacadastro;
+    private Date datacadastro;
 
-    public Cliente(String nome, Endereco endereco, String datacadastro) {
+    public Cliente(String nome, Endereco endereco, java.util.Date hoje) {
         this.nome = nome;
         this.endereco = endereco;
-        this.datacadastro = datacadastro;
+        this.datacadastro = hoje;
     }
 
     public String getNome() {
@@ -25,16 +27,16 @@ public class Cliente {
         this.endereco = endereco;
     }
 
-    public String getDatacadastro() {
+    public Date getDatacadastro() {
         return datacadastro;
     }
 
-    public void setDatacadastro(String datacadastro) {
+    public void setDatacadastro(Date datacadastro) {
         this.datacadastro = datacadastro;
     }
     
     public String paraString(){
-        return "Cliente: " + nome + "\nEndereco:" + endereco.paraString() + "\nData de cadastro:" + datacadastro; 
+        return "Cliente: " + nome + "\n" + endereco.paraString() + "\nData de cadastro:" + datacadastro; 
     }
     
     

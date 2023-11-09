@@ -1,14 +1,14 @@
 public class Endereco {
     private String rua;
-    private String numero;
+    private int num;
     private String bairro;
     private String cep;
     private String cidade;
     private String estado;
 
-    public Endereco(String rua, String numero, String bairro, String cep, String cidade, String estado) {
+    public Endereco(String rua, int num, String bairro, String cep, String cidade, String estado) {
         this.rua = rua;
-        this.numero = numero;
+        this.num = num;
         this.bairro = bairro;
         this.cep = cep;
         this.cidade = cidade;
@@ -23,12 +23,12 @@ public class Endereco {
         this.rua = rua;
     }
 
-    public String getNumero() {
-        return numero;
+    public int getNum() {
+        return num;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setnum(int num) {
+        this.num = num;
     }
 
     public String getBairro() {
@@ -64,7 +64,7 @@ public class Endereco {
     }
 
     public String paraString() {
-        return "Endereco: " + rua + ", Nm: " + numero + ", " + bairro + "\nCEP: " + cep + "\n" + cidade + "/" + estado;
+        return "Endereco: " + rua + ", Nm: " + num + ", " + bairro + "\nCEP: " + cep + "\n" + cidade + "/" + estado;
     }
     
 }
