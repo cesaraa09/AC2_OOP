@@ -60,15 +60,22 @@ public class app {
                     break;
 
                 case 2:
+                    opcCliente = JOptionPane.showOptionDialog(null, "Escolha o tipo de cliente a ser cadastrado:","Escolha do Cliente",
+                    JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,opcoes,opcoes[0]); 
+
+                    break;
+                
+                case 3:
 
                     break;
 
                 default:System.out.println("--ERRO: Opcao invalida!!!");
                     break;
+
                     
             }   
 
-        }while(opc == 1);
+        }while(opc != 8);
 
 
     }
