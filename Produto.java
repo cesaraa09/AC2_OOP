@@ -7,11 +7,12 @@ public class Produto {
     private String cod;
     private Date dataVal; 
     
-    public Produto(String nome, String descricao, double preco, String cod) {
+    public Produto(String nome, String descricao, double preco, String cod, Date dataVal) {
         this.descricao = descricao;
         this.preco = preco;
         this.nome = nome;
         this.cod = cod;
+        this.dataVal = dataVal;
     }
 
     public double getPreco() {
@@ -22,11 +23,11 @@ public class Produto {
         this.preco = preco;
     }
 
-    public String getnome() {
+    public String getNome() {
         return nome;
     }
 
-    public void setnome(String nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
@@ -46,8 +47,16 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public boolean verificarVal(){ // Verificação caso não haja data de validade é executada na main!
-        Date hoje = new Date(); // Objeto Date que possui a data atual,     
+    public Date getDataVal() {
+        return dataVal;
+    }
+
+    public void setDataVal(Date dataVal) {
+        this.dataVal = dataVal;
+    }
+
+    public boolean verificarVal(){ // Verificação no caso de não haver data de validade é executada na main!
+        Date hoje = new Date(); // Objeto Date que possui a data atual
         if(dataVal.after(hoje) ){
             return true;
         }

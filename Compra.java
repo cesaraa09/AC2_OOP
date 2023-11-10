@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class Compra {
     private double valorTotal;
@@ -8,22 +7,15 @@ public class Compra {
     private Date dataCompra;
     private String idCliente; // Recebe Cpf ou Cnpj do cliente.
     private double valorPago;
-    private List<Item> itens = new ArrayList<>();
-
-    public Compra(double valorTotal, String id, Date dataCompra, String idCliente, double valorPago) {
+    private ArrayList <Item> itensLista = new ArrayList<Item>();
+    
+    public Compra(String id, String idCliente, Date dataCompra, double valorTotal, double valorPago, ArrayList<Item> itensLista ) {
         this.valorTotal = valorTotal;
         this.id = id;
         this.dataCompra = dataCompra;
         this.idCliente = idCliente;
         this.valorPago = valorPago;
-    }
-
-    public double getValorTotal() {
-        return valorTotal;
-    }
-
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
+        this.itensLista = itensLista;
     }
 
     public String getId() {
@@ -41,6 +33,14 @@ public class Compra {
     public void setDataCompra(Date dataCompra) {
         this.dataCompra = dataCompra;
     }
+    
+    public double getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
 
     public String getIdCliente() {
         return idCliente;
@@ -57,16 +57,23 @@ public class Compra {
     public void setvalorPago(double valorPago) {
         this.valorPago = valorPago;
     }
+
+    public double calcularValorTotal() {
+            double total = 0;
+            for (Item item : itensLista) {
+                total += item.precoFinal();
+            }
+            return total;
+    }
+
+    public void defineValorTotal() {
+        this.valorTotal = calcularValorTotal();
+    }
     
     public double valorRestante(){
         return valorTotal-valorPago;
     }
 
-    public void adicionarItem(Produto produto, int qtd) {
-        Item item = new Item(produto,qtd);
-        itens.add(item);
-        valorTotal += item.precoFinal();
-    }
     
     
 }

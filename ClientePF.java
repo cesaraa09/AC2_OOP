@@ -27,7 +27,7 @@ public class ClientePF extends Cliente {
     }
 
     public String paraString() {
-        return super.paraString() + "\nCpf: " + cpf + "\nQuantidade máxima de parcelas: "  + qtdparcelas;
+        return super.paraString() + "\nCpf: " + cpf + "\nQuantidade maxima de parcelas: "  + qtdparcelas;
     }
 
 }
