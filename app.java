@@ -8,7 +8,7 @@
             int opc, opcCliente, opcMenu;
             boolean verificadorBoolean = false;
             Date hoje = new Date();
-            double preco;
+            double preco, num2;
             String nome, rua, bairro, cep, cidade, estado, idCliente, razao, cod, descricao, retornoData;
             int num, prazoMax, qtdparcelas;
             String[] opcoesCliente = {"Pessoa Juridica", "Pessoa Fisica"};
@@ -20,7 +20,7 @@
 
             do{
                 opc = Integer.parseInt(JOptionPane.showInputDialog(null, 
-                "1 - Cadastro de Clientes\n2 - Deletar Cliente por CPF ou CNPJ\n3 - Deletar Cliente pelo Nome\n4 - Cadastrar Produto\n5 - Efetuacao de uma Compra\n6 - Atualização da situação de pagamento de uma compra"));
+                "1 - Cadastro de Clientes\n2 - Deletar Cliente por CPF ou CNPJ\n3 - Deletar Cliente pelo Nome\n4 - Cadastrar Produto\n5 - Efetuacao de uma Compra\n6 - Atualizacao da situacao de pagamento de uma compra"));
 
                 switch(opc){
                     case 1:
@@ -29,7 +29,7 @@
                         JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,opcoesCliente,opcoesCliente[0]);
                         if(opcCliente == 0) {
                             nome = JOptionPane.showInputDialog("Digite o nome fantasia:");
-                            razao = JOptionPane.showInputDialog("Digite a razão social da empresa:");
+                            razao = JOptionPane.showInputDialog("Digite a razao social da empresa:");
                             idCliente = JOptionPane.showInputDialog("Digite o CNPJ do cliente:");
                             prazoMax = Integer.parseInt(JOptionPane.showInputDialog("Digite o prazo maximo (em dias) para pagamento:"));
                             rua = JOptionPane.showInputDialog("Digite o nome da rua do cliente:"); 
@@ -173,9 +173,30 @@
 
                     case 6:
                         cod = JOptionPane.showInputDialog(null, "Digite o codigo identificador da compra:");
+                        for(int i = 0; i < comprasList.size(); i++){
+                            if(comprasList.get(i).getId().equals(cod)){ 
+                                if(comprasList.get(i).valorRestante() == 0) {
+                                    JOptionPane.showMessageDialog(null,"A compra jÃ¡ foi paga!");
+                                }
+                                else {
+                                    JOptionPane.showMessageDialog(null, "Valor restante a pagar: R$" + Double.toString(comprasList.get(i).valorRestante()));
+                                    do{
+                                        num2 = Double.parseDouble(JOptionPane.showInputDialog(null,"Digite o quanto o cliente ira pagar:"));
+                                        if(num2 > comprasList.get(i).valorRestante()){
+                                            JOptionPane.showMessageDialog(null,"Insira um valor menor ou igual ao valor restante!");
+                                        }
+                                    }while(num2 > comprasList.get(i).valorRestante());
+                                    comprasList.get(i).setvalorPago(comprasList.get(i).getvalorPago()+num2);
+                                    JOptionPane.showMessageDialog(null, "Valor restante a pagar: R$" + Double.toString(comprasList.get(i).valorRestante()));
+                                    break;
+                                    
+                                }
+                                
+                                
+                        };
+                    }
 
                     break;
-
                     default:System.out.println("Opcao invalida!");
                         break;
 
